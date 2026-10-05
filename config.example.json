@@ -1,0 +1,96 @@
+{
+  "demo": false,
+  "poll_interval_seconds": 5,
+  "combo_refresh_seconds": 75,
+  "request_timeout_seconds": 3,
+  "combo_name": "Coding-All-Rounder",
+  "combo_label": "CB",
+  "combos_url": "http://localhost:20128/api/combos",
+  "combos_headers": {},
+  "max_model_rows": 12,
+  "stats_url": "http://localhost:20128/api/usage/stats?period=24h",
+  "stats_enabled": true,
+  "stats_headers": {},
+  "model_budgets": {},
+  "auto_budget": true,
+  "auto_headroom": 25,
+  "auto_floor": 1000000,
+  "token_metric": "io",
+  "auth": {
+    "login_url": "http://localhost:20128/api/auth/login",
+    "password": "",
+    "password_env": "TOKENPET_PASSWORD"
+  },
+  "pace_window_seconds": 600,
+  "thresholds": {
+    "hot_ratio": 0.5,
+    "warn_mid": 50,
+    "warn_low": 20
+  },
+  "combo_budget": {
+    "24h": 100000000,
+    "7d": 500000000,
+    "today": 100000000,
+    "all": 1000000000
+  },
+  "collapsed_rows": 4,
+  "animation_ms": 240,
+  "busy_seconds": 15,
+  "bar_style": "segmented",
+  "provider_aliases": {
+    "oc": "opencode",
+    "ag": "antigravity"
+  },
+  "strict_provider": true,
+  "dpi_aware": true,
+  "alerts": {
+    "enabled": true,
+    "sound": true,
+    "levels": [
+      20,
+      10,
+      5
+    ],
+    "hot": true,
+    "cooldown_seconds": 600,
+    "banner_seconds": 12
+  },
+  "alert_notify": {
+    "predict": true,
+    "anomaly": true,
+    "session": false,
+    "provider": true,
+    "mission": true
+  },
+  "insight": {
+    "enabled": true,
+    "predict": true,
+    "anomaly": true,
+    "sessions": true,
+    "missions": true,
+    "anomaly_sensitivity": 2.5,
+    "session_idle_seconds": 600,
+    "min_buckets": 6,
+    "maintenance_days": 30
+  },
+  "theme_follows_pet": true,
+  "weather_effects": true,
+  "period_api": {
+    "24h": "24h",
+    "7d": "7d",
+    "today": "today",
+    "all": "all"
+  },
+  "font": "",
+  "font_scale": 0.86,
+  "google_oauth": {
+    "client_id": "",
+    "client_secret": ""
+  },
+  "chatgpt_quota": {
+    "poll_seconds": 60,
+    "use_codex_auth": true,
+    "access_token": "",
+    "account_id": ""
+  }
+}

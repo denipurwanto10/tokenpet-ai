@@ -1,0 +1,22 @@
+window_pos.json
+__pycache__/
+*.pyc
+config.json
+ai_accounts.json
+history.json
+_selftest_hist.json
+tokenpet.log
+tokenpet.log.1
+tokenpet.lock
+# runtime lokal TokenPet (jangan push)
+insight_state.json
+intel_state.json
+intel_data.json
+intel_profile.json
+tokenpet_credentials.dat
+TokenPet.zip
+# rahasia & database (hanya lokal)
+.env
+.env.*
+*.sql
+database/
