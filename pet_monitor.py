@@ -4274,6 +4274,8 @@ class PetMonitor:
             self.next_pet()
         elif key == "i" and self.intel:
             self.open_intel("assistant")
+        elif key == "t":
+            self.toggle_always_on_top()
         elif key == "escape":
             if self.view != "main":
                 self.view = "main"
@@ -4298,10 +4300,37 @@ class PetMonitor:
             pass
 
     def _enforce_topmost(self):
-        """Kembalikan -topmost bila user mau selalu di depan."""
+        """Kembalikan -topmost bila user mau selalu di depan.
+
+        Panel milik sendiri (intel/credential) tetap diangkat di atas
+        widget utama agar tidak ketiban setiap enforcement jalan.
+        """
         if self.always_on_top and not getattr(self, "_dialog_open", False):
             try:
                 self.root.attributes("-topmost", True)
+            except tk.TclError:
+                return
+            try:
+                seen = set()
+                for w in self.root.winfo_children():
+                    try:
+                        if w.winfo_class() == "Toplevel" and w.winfo_exists():
+                            if self.always_on_top:
+                                w.attributes("-topmost", True)
+                            w.lift()
+                            seen.add(str(w))
+                    except tk.TclError:
+                        continue
+                w = getattr(self, "_intel_win", None)
+                top = getattr(w, "top", None) if w is not None else None
+                if top is not None and str(top) not in seen:
+                    try:
+                        if top.winfo_exists():
+                            if self.always_on_top:
+                                top.attributes("-topmost", True)
+                            top.lift()
+                    except tk.TclError:
+                        pass
             except tk.TclError:
                 pass
 

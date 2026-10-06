@@ -50,6 +50,12 @@ class IntelWindow:
         except tk.TclError:
             pass
         t.protocol("WM_DELETE_WINDOW", self.close)
+        try:
+            t.deiconify()
+            t.lift()
+            t.focus_force()
+        except tk.TclError:
+            pass
         self.f = lambda sz=10, b=False: app.ft(sz, b)
         bar = tk.Frame(t, bg=colors["BG"])
         bar.pack(fill="x", padx=8, pady=(8, 4))
