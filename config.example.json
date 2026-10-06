@@ -4,12 +4,10 @@
   "combo_refresh_seconds": 75,
   "request_timeout_seconds": 3,
   "combo_name": "Coding-All-Rounder",
-  "combo_label": "CB",
   "combos_url": "http://localhost:20128/api/combos",
   "combos_headers": {},
   "max_model_rows": 12,
   "stats_url": "http://localhost:20128/api/usage/stats?period=24h",
-  "stats_enabled": true,
   "stats_headers": {},
   "model_budgets": {},
   "auto_budget": true,
@@ -55,23 +53,8 @@
     "cooldown_seconds": 600,
     "banner_seconds": 12
   },
-  "alert_notify": {
-    "predict": true,
-    "anomaly": true,
-    "session": false,
-    "provider": true,
-    "mission": true
-  },
-  "insight": {
-    "enabled": true,
-    "predict": true,
-    "anomaly": true,
-    "sessions": true,
-    "missions": true,
-    "anomaly_sensitivity": 2.5,
-    "session_idle_seconds": 600,
-    "min_buckets": 6,
-    "maintenance_days": 30
+  "intelligence": {
+    "enabled": true
   },
   "theme_follows_pet": true,
   "weather_effects": true,
