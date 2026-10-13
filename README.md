@@ -3,7 +3,7 @@
 Widget kecil tanpa border, selalu di atas, untuk Windows 10/11.
 Python + Tkinter saja (standard library, tanpa dependensi tambahan).
 
-## File
+## File 
 
 | File | Guna |
 |---|---|
